@@ -5,7 +5,7 @@ description = """
               traits and types for taking readings from 2 or 3-axis
               accelerometers
               """
-version     = "0.0.0"
+version     = "0.1.0"
 authors     = ["Tony Arcieri <bascule@gmail.com>"]
 license     = "Apache-2.0 OR MIT"
 homepage    = "https://neobirth.org"
@@ -16,7 +16,7 @@ categories  = ["embedded", "no-std"]
 keywords    = ["acceleration", "position", "tracking"]
 
 [dependencies]
-generic-array = "0.12"
+generic-array = { version = "0.12", default-features = false }
 
 [badges]
 travis-ci = { repository = "NeoBirth/accelerometer.rs" }

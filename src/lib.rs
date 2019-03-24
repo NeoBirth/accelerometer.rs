@@ -15,7 +15,7 @@
     unused_qualifications
 )]
 #![forbid(unsafe_code)]
-#![doc(html_root_url = "https://docs.rs/accelerometer/0.0.0")]
+#![doc(html_root_url = "https://docs.rs/accelerometer/0.1.0")]
 
 #[macro_use]
 extern crate generic_array;
