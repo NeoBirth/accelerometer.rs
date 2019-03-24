@@ -1,0 +1,22 @@
+[package]
+name        = "accelerometer"
+description = """
+              Generic, embedded-friendly accelerometer support, including
+              traits and types for taking readings from 2 or 3-axis
+              accelerometers
+              """
+version     = "0.0.0"
+authors     = ["Tony Arcieri <bascule@gmail.com>"]
+license     = "Apache-2.0 OR MIT"
+homepage    = "https://neobirth.org"
+repository  = "https://github.com/NeoBirth/accelerometer.rs"
+readme      = "README.md"
+edition     = "2018"
+categories  = ["embedded", "no-std"]
+keywords    = ["acceleration", "position", "tracking"]
+
+[dependencies]
+generic-array = "0.12"
+
+[badges]
+travis-ci = { repository = "NeoBirth/accelerometer.rs" }
