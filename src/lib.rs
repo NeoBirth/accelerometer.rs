@@ -1,5 +1,5 @@
 //! Generic embedded-friendly accelerometer support, including traits and types
-//! for representing readings from 1, 2, or 3-axis accelerometers.
+//! for representing readings from 2 or 3-axis accelerometers.
 //!
 //! Also includes optional device position tracking support with statistical
 //! methods for smoothing out noisy accelerometer data.
