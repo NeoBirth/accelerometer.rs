@@ -1,7 +1,7 @@
 # accelerometer.rs
 
-[![Crate][crate-image]][crate-link]
-[![Docs][docs-image]][docs-link]
+[![Crate][crate-img]][crate-link]
+[![Docs][docs-img]][docs-link]
 [![Build Status][build-image]][build-link]
 [![LGPL 3.0 licensed][license-image]][license-link]
 [![Gitter Chat][gitter-image]][gitter-link]
@@ -10,6 +10,20 @@ Generic Rust accelerometer support, including traits and types for taking
 readings from 2 or 3-axis accelerometers
 
 [Documentation][docs-link]
+
+## Supported Crates
+
+The following dependent crates providing platform-agnostic accelerometer
+drivers which use the types and traits from this library:
+
+| Device Name | Description | Crate + Docs |
+|-------------|-------------|--------------|
+| [ADXL343]   | Analog Devices 3-axis accelerometer | [![crates.io][adxl343-crate-img]][adxl343] [![docs.rs][adxl343-docs-img]][adxl343-docs] |
+
+[adxl343]: https://github.com/NeoBirth/ADXL343.rs
+[adxl343-crate-img]: https://img.shields.io/crates/v/adxl343.svg
+[adxl343-docs-img]: https://docs.rs/adxl343/badge.svg
+[adxl343-docs]: https://docs.rs/adxl343/
 
 ## Code of Conduct
 
@@ -26,9 +40,9 @@ Dual licensed under your choice of either of:
 - Apache License, Version 2.0, ([LICENSE-APACHE](LICENSE-APACHE) or http://www.apache.org/licenses/LICENSE-2.0)
 - MIT license ([LICENSE-MIT](LICENSE-MIT) or http://opensource.org/licenses/MIT)
 
-[crate-image]: https://img.shields.io/crates/v/accelerometer.svg
+[crate-img]: https://img.shields.io/crates/v/accelerometer.svg
 [crate-link]: https://crates.io/crates/accelerometer
-[docs-image]: https://docs.rs/accelerometer/badge.svg
+[docs-img]: https://docs.rs/accelerometer/badge.svg
 [docs-link]: https://docs.rs/accelerometer/
 [build-image]: https://secure.travis-ci.org/NeoBirth/accelerometer.rs.svg?branch=master
 [build-link]: https://travis-ci.org/NeoBirth/accelerometer.rs
