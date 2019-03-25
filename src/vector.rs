@@ -1,6 +1,8 @@
 //! Algebraic vector types generic over a number of axes and a component type,
 //! useful for representing accelerometer data or values computed from it.
 
+#[allow(unused_imports)]
+use crate::math::F32Ext;
 use core::{
     fmt::Debug,
     ops::{Add, Div, Index, Mul, MulAssign, Sub},
@@ -9,10 +11,6 @@ use generic_array::{
     typenum::{Unsigned, U2, U3},
     ArrayLength, GenericArray,
 };
-
-// rustc complains this is unused even though it's used! possible rustc bug?
-#[allow(unused_imports)]
-use libm::F32Ext;
 
 /// Maximum number of axes we presently support
 // TODO(tarcieri): replace this with better use of `generic-array` or const generics
@@ -114,7 +112,7 @@ pub trait Vector:
             .sqrt()
     }
 
-    /// Obtain an array of the vector components
+    /// Obtain an array of the acceleration components for each of the axes
     fn to_array(self) -> GenericArray<Self::Component, Self::Axes>;
 }
 
