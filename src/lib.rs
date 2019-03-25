@@ -22,6 +22,6 @@ extern crate generic_array;
 
 mod accelerometer;
 pub mod error;
-pub mod reading;
+pub mod vector;
 
-pub use crate::{accelerometer::*, reading::*};
+pub use crate::{accelerometer::*, error::*, vector::*};

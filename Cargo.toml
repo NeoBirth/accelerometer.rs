@@ -17,6 +17,7 @@ keywords    = ["acceleration", "position", "tracking"]
 
 [dependencies]
 generic-array = { version = "0.12", default-features = false }
+libm = "0.1"
 
 [badges]
 travis-ci = { repository = "NeoBirth/accelerometer.rs" }

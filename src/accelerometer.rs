@@ -1,10 +1,10 @@
 //! Traits for reading acceleration measurements from accelerometers
 
-use crate::{error::Error, reading::Reading};
+use crate::{error::Error, vector::Vector};
 use core::fmt::Debug;
 
-/// Accelerometers capable of obtaining an acceleration reading of type `R`
-pub trait Accelerometer<R: Reading, E: Debug> {
-    /// Get acceleration reading from the accelerometer
-    fn acceleration(&mut self) -> Result<R, Error<E>>;
+/// Accelerometers which measure acceleration vectors of type `V`
+pub trait Accelerometer<V: Vector, E: Debug> {
+    /// Get acceleration vector reading from the accelerometer
+    fn acceleration(&mut self) -> Result<V, Error<E>>;
 }

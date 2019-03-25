@@ -31,11 +31,6 @@ where
         }
     }
 
-    /// Create a new error from a cause, e.g. I2C or SPI I/O error
-    pub fn from_cause(cause: E) -> Self {
-        Self::new_with_cause(ErrorKind::Io, cause)
-    }
-
     /// Get the kind of error which occurred
     pub fn kind(&self) -> ErrorKind {
         self.kind
@@ -61,8 +56,15 @@ pub enum ErrorKind {
     /// Device invalid or other hardware error
     Device,
 
-    /// I/O error
-    Io,
+    /// Error in the underlying communications bus (e.g. I2C, SPI)
+    Bus,
+}
+
+impl ErrorKind {
+    /// Create an `Err(Error)` out of this `ErrorKind`
+    pub fn err<E: Debug>(self) -> Result<(), Error<E>> {
+        Err(Error::new(self))
+    }
 }
 
 impl ErrorKind {
@@ -70,7 +72,7 @@ impl ErrorKind {
     pub fn description(self) -> &'static str {
         match self {
             ErrorKind::Device => "device error",
-            ErrorKind::Io => "I/O error",
+            ErrorKind::Bus => "bus error",
         }
     }
 }
@@ -81,11 +83,12 @@ impl Display for ErrorKind {
     }
 }
 
-impl<E> From<ErrorKind> for Error<E>
+impl<E> From<E> for Error<E>
 where
     E: Debug,
 {
-    fn from(kind: ErrorKind) -> Error<E> {
-        Error::new(kind)
+    /// Create a new error from a cause, e.g. I2C or SPI I/O error
+    fn from(cause: E) -> Error<E> {
+        Self::new_with_cause(ErrorKind::Bus, cause)
     }
 }
