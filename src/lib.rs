@@ -15,7 +15,10 @@
     unused_qualifications
 )]
 #![forbid(unsafe_code)]
-#![doc(html_root_url = "https://docs.rs/accelerometer/0.1.0")]
+#![doc(
+    html_logo_url = "https://raw.githubusercontent.com/NeoBirth/accelerometer.rs/master/img/cartesian-ferris.png",
+    html_root_url = "https://docs.rs/accelerometer/0.2.0"
+)]
 
 #[macro_use]
 extern crate generic_array;
