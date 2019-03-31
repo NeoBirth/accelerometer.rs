@@ -2,7 +2,8 @@
 //! accelerometer data (moving average computed from a trimmed mean with
 //! outliers culled).
 
+mod orientation;
 mod samples;
 mod tracker;
 
-pub use self::{samples::Samples, tracker::*};
+pub use self::{orientation::*, samples::Samples, tracker::*};
