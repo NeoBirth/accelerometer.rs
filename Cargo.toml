@@ -16,8 +16,12 @@ categories  = ["embedded", "no-std"]
 keywords    = ["acceleration", "position", "tracking"]
 
 [dependencies]
-generic-array = { version = "0.12", default-features = false }
-libm = "0.1"
+generic-array = { version = "0.11", default-features = false }
+heapless = { version = "0.4", optional = true }
+
+[features]
+default = ["tracking"]
+tracking = ["heapless"]
 
 [badges]
 travis-ci = { repository = "NeoBirth/accelerometer.rs" }
