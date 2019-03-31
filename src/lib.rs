@@ -7,13 +7,13 @@
 #![no_std]
 #![deny(
     warnings,
-    unsafe_code,
     missing_docs,
     trivial_casts,
     trivial_numeric_casts,
     unused_import_braces,
     unused_qualifications
 )]
+#![forbid(unsafe_code)]
 #![doc(
     html_logo_url = "https://raw.githubusercontent.com/NeoBirth/accelerometer.rs/master/img/cartesian-ferris.png",
     html_root_url = "https://docs.rs/accelerometer/0.3.0"
