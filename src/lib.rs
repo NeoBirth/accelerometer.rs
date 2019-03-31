@@ -24,7 +24,7 @@ extern crate generic_array;
 
 mod accelerometer;
 pub mod error;
-mod math;
+mod f32ext;
 #[cfg(feature = "tracking")]
 pub mod tracking;
 pub mod vector;

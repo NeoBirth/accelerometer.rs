@@ -2,7 +2,7 @@
 //! various kinds of statistical analysis on them.
 
 #[allow(unused_imports)]
-use crate::math::F32Ext;
+use crate::f32ext::F32Ext;
 use crate::vector::Vector;
 use core::slice;
 use generic_array::ArrayLength;
