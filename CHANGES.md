@@ -1,3 +1,9 @@
+## [0.4.0] (2019-04-04)
+
+- Add a `Component` trait for vector components ([#16])
+- Simplified orientation tracker ([#15])
+- Refactor `vector` module ([#13])
+
 ## [0.3.0] (2019-03-31)
 
 - `Orientation` enum ([#11])
@@ -12,6 +18,10 @@
 
 - Initial implementation ([#1])
 
+[0.4.0]: https://github.com/NeoBirth/accelerometer.rs/pull/17
+[#16]: https://github.com/NeoBirth/accelerometer.rs/pull/16
+[#15]: https://github.com/NeoBirth/accelerometer.rs/pull/15
+[#13]: https://github.com/NeoBirth/accelerometer.rs/pull/13
 [0.3.0]: https://github.com/NeoBirth/accelerometer.rs/pull/12
 [#11]: https://github.com/NeoBirth/accelerometer.rs/pull/11
 [#6]: https://github.com/NeoBirth/accelerometer.rs/pull/6

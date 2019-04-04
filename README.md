@@ -14,8 +14,8 @@ readings from 2 or 3-axis accelerometers.
 Includes minimal `no_std`-oriented 2D and 3D vector types useful for
 acceleration readings as well as mathematical operations on them.
 
-Additionally includes minimal statistical analysis tools for filtering
-noisy accelerometer data.
+Additionally includes support for tracking device orientations using
+accelerometer data.
 
 [Documentation][docs-link]
 
