@@ -21,7 +21,7 @@ pub(crate) trait F32Ext: Sized {
     /// Panics if `self` > `n`
     fn radians<N: Into<f32>>(self, min: N, max: N) -> f32;
 
-    /// Assuming self is normalized between `[0, 2)`, compute radians
+    /// Assuming self is normalized between `[0, 4)`, compute radians
     fn radians_norm(self) -> f32;
 
     /// Compute square root
@@ -55,7 +55,7 @@ impl F32Ext for f32 {
     }
 
     fn radians_norm(self) -> f32 {
-        PI * if self > 1.0 { self - 2.0 } else { self }
+        PI / 2.0 * if self > 2.0 { self - 4.0 } else { self }
     }
 
     fn sqrt(self) -> Self {
@@ -69,7 +69,7 @@ fn atan2_approx(y: f32, x: f32) -> f32 {
 }
 
 /// Approximates the four quadrant arctangent for a single-precision float.
-/// Normalized to the `[0, 2)` range with a maximum error of `0.1620` degrees.
+/// Normalized to the `[0, 4)` range with a maximum error of `0.1620` degrees.
 ///
 /// Method described at: <https://ieeexplore.ieee.org/document/6375931>
 fn atan2_norm_approx(y: f32, x: f32) -> f32 {
@@ -90,7 +90,7 @@ fn atan2_norm_approx(y: f32, x: f32) -> f32 {
 
     // Translate it to the proper quadrant
     let uatan_2q = (ux_s ^ uy_s) | atan_1q.to_bits();
-    (q + f32::from_bits(uatan_2q)) / 2.0
+    q + f32::from_bits(uatan_2q)
 }
 
 /// Square root approximation function for a single-precision float.
