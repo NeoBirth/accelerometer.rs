@@ -4,12 +4,6 @@ use super::Vector;
 use core::ops::{Index, MulAssign};
 use generic_array::{typenum::U2, GenericArray};
 
-/// 2-Dimensional Vectors (X,Y)
-pub trait Vector2D: Vector {
-    /// Instantiate from X and Y components
-    fn new(x: Self::Component, y: Self::Component) -> Self;
-}
-
 macro_rules! impl_2d_vector {
     ($vector:ident, $component:tt, $doc:expr) => {
         #[doc=$doc]
@@ -22,9 +16,9 @@ macro_rules! impl_2d_vector {
             pub y: $component,
         }
 
-        impl Vector2D for $vector {
+        impl $vector {
             /// Instantiate from X and Y components
-            fn new(x: $component, y: $component) -> Self {
+            pub fn new(x: $component, y: $component) -> Self {
                 $vector { x, y }
             }
         }
@@ -47,11 +41,6 @@ macro_rules! impl_2d_vector {
                 debug_assert!(iter.next().is_none(), "too many items in 2-dimensional component slice");
 
                 Self::new(x, y)
-            }
-
-            #[allow(trivial_numeric_casts)]
-            fn from_floats(slice: &[f32]) -> Self {
-                Self::from_iter(slice.iter().map(|float| *float as $component))
             }
 
             fn get(self, i: usize) -> Option<Self::Component> {

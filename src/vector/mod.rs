@@ -7,7 +7,7 @@ use core::{
     fmt::Debug,
     ops::{Add, Div, Index, Mul, MulAssign, Sub},
 };
-use generic_array::{typenum::Unsigned, ArrayLength, GenericArray};
+use generic_array::{ArrayLength, GenericArray};
 
 mod iter;
 mod xy;
@@ -27,6 +27,8 @@ pub trait Vector:
         + Sub<Output = Self::Component>
         + Mul<Output = Self::Component>
         + Div<Output = Self::Component>
+        + PartialOrd
+        + PartialEq
         + Into<f32>;
 
     /// Number of axes
@@ -50,43 +52,6 @@ pub trait Vector:
     /// Panics if the slice is not the right size.
     fn from_slice(slice: &[Self::Component]) -> Self {
         Self::from_iter(slice.iter().cloned())
-    }
-
-    /// Instantiate a vector from a slice of `f32`s.
-    ///
-    /// Panics if the slice is not the right size.
-    fn from_floats(slice: &[f32]) -> Self;
-
-    /// Compute arithmetic mean of the components of an iterator over vectors,
-    /// returning a vector consisting of the arithmetic means of its components.
-    fn mean<I>(vectors: I) -> Self
-    where
-        I: IntoIterator<Item = Self>,
-    {
-        /// Maximum number of axes we presently support
-        // TODO(tarcieri): replace this with better use of `generic-array` or const generics
-        // Won't someone please think of the n-dimensional hyperspace accelerometers?
-        const MAX_AXES: usize = 3;
-
-        // TODO(tarcieri): find a solution that doesn't need `MAX_AXES`
-        debug_assert!(
-            Self::Axes::to_usize() <= MAX_AXES,
-            "maximum number of axes supported is 3"
-        );
-
-        let mut component_values = [0.0; MAX_AXES];
-
-        for sample in vectors {
-            for (axis, component) in sample.iter().enumerate() {
-                component_values[axis] += component.into();
-            }
-        }
-
-        for value in &mut component_values[..Self::Axes::to_usize()] {
-            *value /= Self::Axes::to_usize() as f32;
-        }
-
-        Self::from_floats(&component_values[..Self::Axes::to_usize()])
     }
 
     /// Get the component value for a particular index

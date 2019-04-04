@@ -25,10 +25,10 @@ extern crate generic_array;
 mod accelerometer;
 pub mod error;
 mod f32ext;
-#[cfg(feature = "tracking")]
-pub mod tracking;
+#[cfg(feature = "orientation")]
+pub mod orientation;
 pub mod vector;
 
-#[cfg(feature = "tracking")]
-pub use crate::tracking::*;
+#[cfg(feature = "orientation")]
+pub use crate::orientation::*;
 pub use crate::{accelerometer::*, error::*, vector::*};

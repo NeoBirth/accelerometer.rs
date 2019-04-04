@@ -1,3 +1,9 @@
+//! Orientation tracking for accelerometer-equipped devices
+
+mod tracker;
+
+pub use self::tracker::Tracker;
+
 /// Device orientation as computed from accelerometer data
 #[derive(Copy, Clone, Debug, Eq, PartialEq)]
 pub enum Orientation {
