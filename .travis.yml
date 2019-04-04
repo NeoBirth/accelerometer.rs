@@ -25,7 +25,7 @@ matrix:
         - cargo build --release
     - name: build (thumbv7em-none-eabihf target)
       script:
-        - cargo build --target thumbv7em-none-eabihf --no-default-features --release
+        - cargo build --target thumbv7em-none-eabihf --release
     - name: test
       script:
         - cargo test --release

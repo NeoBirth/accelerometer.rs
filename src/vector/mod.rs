@@ -32,7 +32,10 @@ pub trait Vector:
     /// Number of axes
     type Axes: ArrayLength<Self::Component>;
 
-    /// Largest value representable with a vector component
+    /// Smallest value representable by a vector component
+    const MIN: Self::Component;
+
+    /// Largest value representable by a vector component
     const MAX: Self::Component;
 
     /// Instantiate a `Vector` from an iterator over `Self::Component` values.

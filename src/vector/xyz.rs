@@ -1,6 +1,7 @@
 //! 3-Dimensional Vectors (X,Y,Z)
 
 use super::Vector;
+use crate::f32ext::F32Ext;
 use core::ops::{Index, MulAssign};
 use generic_array::{typenum::U3, GenericArray};
 
@@ -8,6 +9,45 @@ use generic_array::{typenum::U3, GenericArray};
 pub trait Vector3D: Vector {
     /// Instantiate from X, Y, and Z components
     fn new(x: Self::Component, y: Self::Component, z: Self::Component) -> Self;
+
+    /// Compute pitch of a 3-axis vector normalized between `[0, 2)`
+    fn pitch_norm(&self) -> f32 {
+        let mut iter = self.iter();
+
+        let x: f32 = iter.next().unwrap().into();
+        let y: f32 = iter.next().unwrap().into();
+        let z: f32 = iter.next().unwrap().into();
+
+        let x_rad = x.radians(Self::MIN, Self::MAX);
+        let y_rad = y.radians(Self::MIN, Self::MAX);
+        let z_rad = z.radians(Self::MIN, Self::MAX);
+
+        (-x_rad).atan2_norm((y_rad * y_rad + z_rad * z_rad).sqrt())
+    }
+
+    /// Compute pitch of a 3-axis vector in radians
+    fn pitch_radians(&self) -> f32 {
+        self.pitch_norm().radians_norm()
+    }
+
+    /// Compute roll of a 3-axis vector normalized between `[0, 2)`
+    fn roll_norm(&self) -> f32 {
+        let mut iter = self.iter();
+
+        iter.next().unwrap();
+        let y: f32 = iter.next().unwrap().into();
+        let z: f32 = iter.next().unwrap().into();
+
+        let y_rad = y.radians(Self::MIN, Self::MAX);
+        let z_rad = z.radians(Self::MIN, Self::MAX);
+
+        y_rad.atan2_norm(z_rad)
+    }
+
+    /// Compute norm of a 3-axis vector in radians
+    fn roll_radians(&self) -> f32 {
+        self.roll_norm().radians_norm()
+    }
 }
 
 macro_rules! impl_3d_vector {
@@ -36,6 +76,7 @@ macro_rules! impl_3d_vector {
             type Component = $component;
             type Axes = U3;
 
+            const MIN: $component = core::$component::MIN;
             const MAX: $component = core::$component::MAX;
 
             fn from_iter<I>(into_iter: I) -> Self

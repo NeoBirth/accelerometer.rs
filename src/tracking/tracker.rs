@@ -17,27 +17,30 @@ pub type Tracker32<A, V, E> = Tracker<A, V, E, U32>;
 
 /// Device position tracker which which filters noisy accelerometer data
 /// using statistical methods
-pub struct Tracker<A, V, E, L>
+pub struct Tracker<V, A, E, L>
 where
-    A: Accelerometer<V, E>,
     V: Vector,
+    A: Accelerometer<V, E>,
     E: Debug,
     L: ArrayLength<V>,
 {
     /// The underlying accelerometer device
     accelerometer: A,
 
-    /// Samples of accelerometer data
-    samples: Samples<V, L>,
+    /// Raw samples of accelerometer data
+    raw_samples: Samples<V, L>,
+
+    /// Historical trimmed mean values used to compute the smoothed mean
+    mean_samples: Samples<V, L>,
 
     /// Error type associated with the underlying accelerometer
     errors: PhantomData<E>,
 }
 
-impl<A, V, E, S> Tracker<A, V, E, S>
+impl<V, A, E, S> Tracker<V, A, E, S>
 where
-    A: Accelerometer<V, E>,
     V: Vector,
+    A: Accelerometer<V, E>,
     E: Debug,
     S: ArrayLength<V>,
 {
@@ -45,7 +48,8 @@ where
     pub fn new(accelerometer: A) -> Self {
         Self {
             accelerometer,
-            samples: Samples::new(),
+            raw_samples: Samples::new(),
+            mean_samples: Samples::new(),
             errors: PhantomData,
         }
     }
@@ -62,14 +66,15 @@ where
 
     /// Borrow the underlying buffer of `Samples`
     pub fn samples(&self) -> &Samples<V, S> {
-        &self.samples
+        &self.raw_samples
     }
 
     /// Read a sample from the underlying device and store it in the internal
     /// sample buffer
     pub fn update(&mut self) -> Result<V, Error<E>> {
         let sample = self.accelerometer.acceleration()?;
-        self.samples.update(sample);
+        self.raw_samples.update(sample);
+        self.mean_samples.update(self.raw_samples.mean());
         Ok(sample)
     }
 
@@ -81,6 +86,6 @@ where
     /// and invoke the `mean()` function on the underlying buffer.
     pub fn mean_acceleration(&mut self) -> Result<V, Error<E>> {
         self.update()?;
-        Ok(self.samples.trimmed_mean())
+        Ok(self.mean_samples.mean())
     }
 }

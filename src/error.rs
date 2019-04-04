@@ -53,11 +53,17 @@ where
 /// Kinds of accelerometer errors
 #[derive(Copy, Clone, Debug, Eq, PartialEq)]
 pub enum ErrorKind {
+    /// Error in the underlying communications bus (e.g. I2C, SPI)
+    Bus,
+
     /// Device invalid or other hardware error
     Device,
 
-    /// Error in the underlying communications bus (e.g. I2C, SPI)
-    Bus,
+    /// Device is in an invalid mode to complete the requested operation
+    Mode,
+
+    /// Invalid parameter
+    Param,
 }
 
 impl ErrorKind {
@@ -73,6 +79,8 @@ impl ErrorKind {
         match self {
             ErrorKind::Device => "device error",
             ErrorKind::Bus => "bus error",
+            ErrorKind::Mode => "invalid mode",
+            ErrorKind::Param => "invalid parameter",
         }
     }
 }

@@ -33,6 +33,7 @@ macro_rules! impl_2d_vector {
             type Component = $component;
             type Axes = U2;
 
+            const MIN: $component = core::$component::MIN;
             const MAX: $component = core::$component::MAX;
 
             fn from_iter<I>(into_iter: I) -> Self
