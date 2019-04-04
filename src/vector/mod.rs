@@ -5,31 +5,23 @@
 use crate::f32ext::F32Ext;
 use core::{
     fmt::Debug,
-    ops::{Add, Div, Index, Mul, MulAssign, Sub},
+    ops::{Index, MulAssign},
 };
 use generic_array::{ArrayLength, GenericArray};
 
+mod component;
 mod iter;
 mod xy;
 mod xyz;
 
-pub use self::{iter::*, xy::*, xyz::*};
+pub use self::{component::*, iter::*, xy::*, xyz::*};
 
 /// Vectors with numeric components
 pub trait Vector:
     Copy + Debug + Default + Index<usize> + MulAssign<f32> + PartialEq + Sized + Send + Sync
 {
     /// Type representing measured acceleration for a particular axis
-    type Component: Copy
-        + Default
-        + Sized
-        + Add<Output = Self::Component>
-        + Sub<Output = Self::Component>
-        + Mul<Output = Self::Component>
-        + Div<Output = Self::Component>
-        + PartialOrd
-        + PartialEq
-        + Into<f32>;
+    type Component: Component;
 
     /// Number of axes
     type Axes: ArrayLength<Self::Component>;
@@ -85,42 +77,4 @@ pub trait Vector:
 
     /// Obtain an array of the acceleration components for each of the axes
     fn to_array(self) -> GenericArray<Self::Component, Self::Axes>;
-}
-
-/// Iterator over the components of a vector
-pub struct Iter<'a, V>
-where
-    V: Vector,
-{
-    /// Reference to the original vector
-    vector: &'a V,
-
-    /// Iteration position within the vector
-    position: usize,
-}
-
-impl<'a, V> Iter<'a, V>
-where
-    V: Vector,
-{
-    /// Create a new iterator over the vector's components
-    fn new(vector: &'a V) -> Self {
-        Self {
-            vector,
-            position: 0,
-        }
-    }
-}
-
-impl<'a, V> Iterator for Iter<'a, V>
-where
-    V: Vector,
-{
-    type Item = V::Component;
-
-    fn next(&mut self) -> Option<V::Component> {
-        let item = self.vector.get(self.position);
-        self.position += 1;
-        item
-    }
 }
