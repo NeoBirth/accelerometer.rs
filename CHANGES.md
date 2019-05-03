@@ -1,3 +1,7 @@
+## [0.5.0] (2019-05-03)
+
+- Use the `micromath` crate ([#18])
+
 ## [0.4.0] (2019-04-04)
 
 - Add a `Component` trait for vector components ([#16])
@@ -18,6 +22,8 @@
 
 - Initial implementation ([#1])
 
+[0.5.0]: https://github.com/NeoBirth/accelerometer.rs/pull/19
+[#18]: https://github.com/NeoBirth/accelerometer.rs/pull/18
 [0.4.0]: https://github.com/NeoBirth/accelerometer.rs/pull/17
 [#16]: https://github.com/NeoBirth/accelerometer.rs/pull/16
 [#15]: https://github.com/NeoBirth/accelerometer.rs/pull/15
