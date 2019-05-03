@@ -16,7 +16,7 @@
 #![forbid(unsafe_code)]
 #![doc(
     html_logo_url = "https://raw.githubusercontent.com/NeoBirth/accelerometer.rs/master/img/cartesian-ferris.png",
-    html_root_url = "https://docs.rs/accelerometer/0.4.0"
+    html_root_url = "https://docs.rs/accelerometer/0.5.0"
 )]
 
 mod accelerometer;
@@ -26,5 +26,5 @@ pub mod orientation;
 
 #[cfg(feature = "orientation")]
 pub use crate::orientation::*;
-pub use crate::{accelerometer::*, error::*, vector::*};
-pub use micromath::vector;
+pub use crate::{accelerometer::*, error::*};
+pub use micromath::vector::{self, *};
