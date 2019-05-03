@@ -1,4 +1,4 @@
-<img src="https://raw.githubusercontent.com/NeoBirth/accelerometer.rs/master/img/cartesian-ferris.png" width="150" height="110">
+<img src="https://raw.githubusercontent.com/NeoBirth/accelerometer.rs/develop/img/cartesian-ferris.png" width="150" height="110">
 
 # accelerometer.rs
 

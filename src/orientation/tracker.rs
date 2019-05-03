@@ -7,7 +7,7 @@ use generic_array::typenum::U3;
 
 // Spuriously triggers unused import warnings in cases std is linked
 #[allow(unused_imports)]
-use crate::f32ext::F32Ext;
+use micromath::F32Ext;
 
 /// Device position tracker which which filters noisy accelerometer data
 /// using statistical methods

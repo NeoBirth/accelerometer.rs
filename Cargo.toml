@@ -12,15 +12,16 @@ homepage    = "https://neobirth.org"
 repository  = "https://github.com/NeoBirth/accelerometer.rs"
 readme      = "README.md"
 edition     = "2018"
-categories  = ["embedded", "no-std"]
+categories  = ["embedded", "hardware-support", "no-std"]
 keywords    = ["acceleration", "position", "tracking"]
 
 [dependencies]
-generic-array = { version = "0.12", default-features = false }
+micromath = "0.1"
+generic-array = { version = "0.12", optional = true, default-features = false }
 
 [features]
 default = ["orientation"]
-orientation = []
+orientation = ["generic-array"]
 
 [badges]
 travis-ci = { repository = "NeoBirth/accelerometer.rs" }
