@@ -1,3 +1,8 @@
+## [0.5.2] (2019-05-03)
+
+- `lib.rs`: Add docs on writing an accelerometer driver ([#24])
+- `lib.rs`: Fix `html_logo_url` to point at `develop` branch ([#23])
+
 ## [0.5.1] (2019-05-03)
 
 - Update to micromath v0.2 ([#20])
@@ -26,6 +31,9 @@
 
 - Initial implementation ([#1])
 
+[0.5.2]: https://github.com/NeoBirth/accelerometer.rs/pull/25
+[#24]: https://github.com/NeoBirth/accelerometer.rs/pull/24
+[#23]: https://github.com/NeoBirth/accelerometer.rs/pull/23
 [0.5.1]: https://github.com/NeoBirth/accelerometer.rs/pull/21
 [#20]: https://github.com/NeoBirth/accelerometer.rs/pull/20
 [0.5.0]: https://github.com/NeoBirth/accelerometer.rs/pull/19
