@@ -1,3 +1,7 @@
+## [0.5.1] (2019-05-03)
+
+- Update to micromath v0.2 ([#20])
+
 ## [0.5.0] (2019-05-03)
 
 - Use the `micromath` crate ([#18])
@@ -22,6 +26,8 @@
 
 - Initial implementation ([#1])
 
+[0.5.1]: https://github.com/NeoBirth/accelerometer.rs/pull/21
+[#20]: https://github.com/NeoBirth/accelerometer.rs/pull/20
 [0.5.0]: https://github.com/NeoBirth/accelerometer.rs/pull/19
 [#18]: https://github.com/NeoBirth/accelerometer.rs/pull/18
 [0.4.0]: https://github.com/NeoBirth/accelerometer.rs/pull/17
