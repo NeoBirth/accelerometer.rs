@@ -3,7 +3,7 @@
 
 use crate::{accelerometer::Accelerometer, orientation::Orientation, vector::Vector};
 use core::marker::PhantomData;
-use generic_array::typenum::U3;
+use micromath::generic_array::typenum::U3;
 
 // Spuriously triggers unused import warnings in cases std is linked
 #[allow(unused_imports)]

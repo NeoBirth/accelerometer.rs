@@ -16,12 +16,11 @@ categories  = ["embedded", "hardware-support", "no-std"]
 keywords    = ["acceleration", "position", "tracking"]
 
 [dependencies]
-micromath = "0.1"
-generic-array = { version = "0.12", optional = true, default-features = false }
+micromath = "0.2"
 
 [features]
 default = ["orientation"]
-orientation = ["generic-array"]
+orientation = []
 
 [badges]
 travis-ci = { repository = "NeoBirth/accelerometer.rs" }
