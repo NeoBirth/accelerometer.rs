@@ -32,6 +32,14 @@ drivers which use the types and traits from this library:
 [adxl343-docs-img]: https://docs.rs/adxl343/badge.svg
 [adxl343-docs]: https://docs.rs/adxl343/
 
+## Orientation Tracking (3-axis accelerometers only)
+
+![ezgif-1-16e98d9b86ad](https://user-images.githubusercontent.com/797/55564522-ebaf2b00-56ac-11e9-808f-9809e85c1bd2.gif)
+
+One of the main features of this crate is device orientation tracking for 3-axis accelerometers, which is gated under the `orientation` cargo feature (enabled-by-default). This provides smartphone-like device position sensing using an accelerometer alone, returned as one of the variants of the [accelerometer::Orientation] enum.
+
+See the [accelerometer::Tracker] documentation for more information.
+
 ## Code of Conduct
 
 We abide by the [Contributor Covenant][cc] and ask that you do as well.
@@ -58,5 +66,7 @@ Dual licensed under your choice of either of:
 [gitter-image]: https://badges.gitter.im/NeoBirth/accelerometer.rs.svg
 [gitter-link]: https://gitter.im/NeoBirth/community
 [micromath.rs]: https://github.com/NeoBirth/micromath
+[accelerometer::Orientation]: https://docs.rs/accelerometer/latest/accelerometer/orientation/enum.Orientation.html
+[accelerometer::Tracker]: https://docs.rs/accelerometer/latest/accelerometer/orientation/struct.Tracker.html
 [cc]: https://contributor-covenant.org
 [CODE_OF_CONDUCT.md]: https://github.com/NeoBirth/accelerometer.rs/blob/develop/CODE_OF_CONDUCT.md
