@@ -1,7 +1,11 @@
 //! Device position tracker which uses a sliding widow of acceleration data
 //! samples to help filter the signal from the noise.
 
-use crate::{accelerometer::Accelerometer, orientation::Orientation, vector::Vector};
+use crate::{
+    accelerometer::Accelerometer,
+    orientation::Orientation,
+    vector::{Component, Vector, VectorExt},
+};
 use core::marker::PhantomData;
 use micromath::generic_array::typenum::U3;
 
@@ -14,7 +18,7 @@ use micromath::F32Ext;
 pub struct Tracker<A, V>
 where
     A: Accelerometer<V>,
-    V: Vector<Axes = U3>,
+    V: Vector<Axes = U3> + VectorExt,
 {
     /// The underlying accelerometer device
     accelerometer: A,
@@ -29,10 +33,11 @@ where
     vector: PhantomData<V>,
 }
 
-impl<A, V> Tracker<A, V>
+impl<A, V, C> Tracker<A, V>
 where
     A: Accelerometer<V>,
-    V: Vector<Axes = U3>,
+    V: Vector<Axes = U3, Component = C> + VectorExt,
+    C: Component + Into<f32>,
 {
     /// Create a new orientation tracker
     pub fn new(accelerometer: A, threshold: V::Component) -> Self {
