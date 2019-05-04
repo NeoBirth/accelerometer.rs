@@ -1,7 +1,7 @@
 //! Traits for reading acceleration measurements from accelerometers
 
-use crate::vector::Vector;
 use core::fmt::Debug;
+use micromath::vector::Vector;
 
 /// Accelerometers which measure acceleration vectors of type `V`
 pub trait Accelerometer<V: Vector> {
