@@ -15,7 +15,7 @@
 )]
 #![forbid(unsafe_code)]
 #![doc(
-    html_logo_url = "https://raw.githubusercontent.com/NeoBirth/accelerometer.rs/master/img/cartesian-ferris.png",
+    html_logo_url = "https://raw.githubusercontent.com/NeoBirth/accelerometer.rs/develop/img/cartesian-ferris.png",
     html_root_url = "https://docs.rs/accelerometer/0.5.1"
 )]
 
