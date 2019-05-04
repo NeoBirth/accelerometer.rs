@@ -51,12 +51,12 @@ Dual licensed under your choice of either of:
 [crate-link]: https://crates.io/crates/accelerometer
 [docs-img]: https://docs.rs/accelerometer/badge.svg
 [docs-link]: https://docs.rs/accelerometer/
-[build-image]: https://secure.travis-ci.org/NeoBirth/accelerometer.rs.svg?branch=master
+[build-image]: https://secure.travis-ci.org/NeoBirth/accelerometer.rs.svg?branch=develop
 [build-link]: https://travis-ci.org/NeoBirth/accelerometer.rs
 [license-image]: https://img.shields.io/badge/license-Apache2.0/MIT-blue.svg
-[license-link]: https://github.com/NeoBirth/accelerometer.rs/blob/master/LICENSE-APACHE
+[license-link]: https://github.com/NeoBirth/accelerometer.rs/blob/develop/LICENSE-APACHE
 [gitter-image]: https://badges.gitter.im/NeoBirth/accelerometer.rs.svg
 [gitter-link]: https://gitter.im/NeoBirth/community
 [micromath.rs]: https://github.com/NeoBirth/micromath
 [cc]: https://contributor-covenant.org
-[CODE_OF_CONDUCT.md]: https://github.com/NeoBirth/accelerometer.rs/blob/master/CODE_OF_CONDUCT.md
+[CODE_OF_CONDUCT.md]: https://github.com/NeoBirth/accelerometer.rs/blob/develop/CODE_OF_CONDUCT.md
