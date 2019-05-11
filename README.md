@@ -9,7 +9,8 @@
 [![Gitter Chat][gitter-image]][gitter-link]
 
 Generic Rust accelerometer support, including traits and types for taking
-readings from 2 or 3-axis accelerometers.
+readings from 2 or 3-axis accelerometers, intended for use with
+platform-agnostic accelerometer drivers written using [embedded-hal].
 
 Uses `no_std`-oriented 2D and 3D vector types from the [micromath.rs] crate.
 
@@ -21,24 +22,34 @@ accelerometer data.
 ## Supported Crates
 
 The following dependent crates providing platform-agnostic accelerometer
-drivers which use the types and traits from this library:
+drivers built on `embedded-hal` which also implement this crate's
+[`Accelerometer`] trait:
 
 | Device Name | Description | Crate + Docs |
 |-------------|-------------|--------------|
 | [ADXL343]   | Analog Devices 3-axis accelerometer | [![crates.io][adxl343-crate-img]][adxl343] [![docs.rs][adxl343-docs-img]][adxl343-docs] |
+| [MMA7660FC] | Grove 3-Axis Digital Accelerometer  | [![crates.io][mma7660fc-crate-img]][mma7660fc] [![docs.rs][mma7660fc-docs-img]][mma7660fc-docs] |
 
 [adxl343]: https://github.com/NeoBirth/ADXL343.rs
 [adxl343-crate-img]: https://img.shields.io/crates/v/adxl343.svg
 [adxl343-docs-img]: https://docs.rs/adxl343/badge.svg
 [adxl343-docs]: https://docs.rs/adxl343/
+[mma7660fc]: https://github.com/rahul-thakoor/mma7660fc/
+[mma7660fc-crate-img]: https://img.shields.io/crates/v/mma7660fc.svg
+[mma7660fc-docs-img]: https://docs.rs/mma7660fc/badge.svg
+[mma7660fc-docs]: https://docs.rs/mma7660fc/
 
 ## Orientation Tracking (3-axis accelerometers only)
 
 ![ezgif-1-16e98d9b86ad](https://user-images.githubusercontent.com/797/55564522-ebaf2b00-56ac-11e9-808f-9809e85c1bd2.gif)
 
-One of the main features of this crate is device orientation tracking for 3-axis accelerometers, which is gated under the `orientation` cargo feature (enabled-by-default). This provides smartphone-like device position sensing using an accelerometer alone, returned as one of the variants of the [accelerometer::Orientation] enum.
+One of the main features of this crate is device orientation tracking for
+3-axis accelerometers, which is gated under the `orientation` cargo feature
+(enabled-by-default). This provides smartphone-like device position sensing
+using an accelerometer alone, returned as one of the variants of the
+[`accelerometer::Orientation`] enum.
 
-See the [accelerometer::Tracker] documentation for more information.
+See the [`accelerometer::Tracker`] documentation for more information.
 
 ## Code of Conduct
 
@@ -65,8 +76,10 @@ Dual licensed under your choice of either of:
 [license-link]: https://github.com/NeoBirth/accelerometer.rs/blob/develop/LICENSE-APACHE
 [gitter-image]: https://badges.gitter.im/NeoBirth/accelerometer.rs.svg
 [gitter-link]: https://gitter.im/NeoBirth/community
+[embedded-hal]: https://docs.rs/embedded-hal/
 [micromath.rs]: https://github.com/NeoBirth/micromath
-[accelerometer::Orientation]: https://docs.rs/accelerometer/latest/accelerometer/orientation/enum.Orientation.html
-[accelerometer::Tracker]: https://docs.rs/accelerometer/latest/accelerometer/orientation/struct.Tracker.html
+[`Accelerometer`]: https://docs.rs/accelerometer/latest/accelerometer/trait.Accelerometer.html
+[`accelerometer::Orientation`]: https://docs.rs/accelerometer/latest/accelerometer/orientation/enum.Orientation.html
+[`accelerometer::Tracker`]: https://docs.rs/accelerometer/latest/accelerometer/orientation/struct.Tracker.html
 [cc]: https://contributor-covenant.org
 [CODE_OF_CONDUCT.md]: https://github.com/NeoBirth/accelerometer.rs/blob/develop/CODE_OF_CONDUCT.md
