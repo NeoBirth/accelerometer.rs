@@ -19,6 +19,10 @@ accelerometer data.
 
 [Documentation][docs-link]
 
+## Requirements
+
+- Rust 1.31+
+
 ## Supported Crates
 
 The following dependent crates providing platform-agnostic accelerometer
