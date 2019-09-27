@@ -39,7 +39,7 @@
 #![forbid(unsafe_code)]
 #![doc(
     html_logo_url = "https://raw.githubusercontent.com/NeoBirth/accelerometer.rs/develop/img/cartesian-ferris.png",
-    html_root_url = "https://docs.rs/accelerometer/0.6.0"
+    html_root_url = "https://docs.rs/accelerometer/0.6.1"
 )]
 
 mod accelerometer;
