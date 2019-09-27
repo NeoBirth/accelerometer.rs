@@ -32,12 +32,19 @@ drivers built on `embedded-hal` which also implement this crate's
 | Device Name | Description | Crate + Docs |
 |-------------|-------------|--------------|
 | [ADXL343]   | Analog Devices 3-axis accelerometer | [![crates.io][adxl343-crate-img]][adxl343] [![docs.rs][adxl343-docs-img]][adxl343-docs] |
+| [LIS2DH12]  | ST 3-Axis MEMS Accelerometer | [![crates.io][lis2dh12-crate-img]][lis2dh12] [![docs.rs][lis2dh12-docs-img]][lis2dh12-docs] |
 | [MMA7660FC] | Grove 3-Axis Digital Accelerometer  | [![crates.io][mma7660fc-crate-img]][mma7660fc] [![docs.rs][mma7660fc-docs-img]][mma7660fc-docs] |
 
 [adxl343]: https://github.com/NeoBirth/ADXL343.rs
 [adxl343-crate-img]: https://img.shields.io/crates/v/adxl343.svg
 [adxl343-docs-img]: https://docs.rs/adxl343/badge.svg
 [adxl343-docs]: https://docs.rs/adxl343/
+
+[lis2dh12]: https://github.com/tkeksa/lis2dh12
+[lis2dh12-crate-img]: https://img.shields.io/crates/v/lis2dh12.svg
+[lis2dh12-docs-img]: https://docs.rs/lis2dh12/badge.svg
+[lis2dh12-docs]: https://docs.rs/lis2dh12/
+
 [mma7660fc]: https://github.com/rahul-thakoor/mma7660fc/
 [mma7660fc-crate-img]: https://img.shields.io/crates/v/mma7660fc.svg
 [mma7660fc-docs-img]: https://docs.rs/mma7660fc/badge.svg
@@ -70,6 +77,8 @@ Dual licensed under your choice of either of:
 - Apache License, Version 2.0, ([LICENSE-APACHE](LICENSE-APACHE) or http://www.apache.org/licenses/LICENSE-2.0)
 - MIT license ([LICENSE-MIT](LICENSE-MIT) or http://opensource.org/licenses/MIT)
 
+[//]: # (badges)
+
 [crate-img]: https://img.shields.io/crates/v/accelerometer.svg
 [crate-link]: https://crates.io/crates/accelerometer
 [docs-img]: https://docs.rs/accelerometer/badge.svg
@@ -80,6 +89,9 @@ Dual licensed under your choice of either of:
 [license-link]: https://github.com/NeoBirth/accelerometer.rs/blob/develop/LICENSE-APACHE
 [gitter-image]: https://badges.gitter.im/NeoBirth/accelerometer.rs.svg
 [gitter-link]: https://gitter.im/NeoBirth/community
+
+[//]: # (general links)
+
 [embedded-hal]: https://docs.rs/embedded-hal/
 [micromath.rs]: https://github.com/NeoBirth/micromath
 [`Accelerometer`]: https://docs.rs/accelerometer/latest/accelerometer/trait.Accelerometer.html
