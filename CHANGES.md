@@ -1,3 +1,7 @@
+## [0.7.0] (2019-10-02)
+
+- Upgrade to `micromath` v0.4 ([#34])
+
 ## [0.6.1] (2019-09-26)
 
 - README updates ([#30], [#32])
@@ -39,6 +43,8 @@
 
 - Initial implementation ([#1])
 
+[0.7.0]: https://github.com/NeoBirth/accelerometer.rs/pull/35
+[#34]: https://github.com/NeoBirth/accelerometer.rs/pull/34
 [0.6.1]: https://github.com/NeoBirth/accelerometer.rs/pull/33
 [#32]: https://github.com/NeoBirth/accelerometer.rs/pull/32
 [#30]: https://github.com/NeoBirth/accelerometer.rs/pull/30
