@@ -16,7 +16,7 @@ categories  = ["embedded", "hardware-support", "no-std"]
 keywords    = ["acceleration", "position", "tracking"]
 
 [dependencies]
-micromath = "0.3"
+micromath = "0.4"
 
 [features]
 default = ["orientation"]
