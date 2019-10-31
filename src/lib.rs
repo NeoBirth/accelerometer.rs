@@ -15,10 +15,10 @@
 //! and write a driver which is able to communicate with the accelerometer and
 //! obtain data.
 //!
-//! Next, impl the [Accelerometer] trait for your driver. You will need to
-//! choose a [Vector] type for representing accelerometer data which best
+//! Next, impl the [`Accelerometer`] trait for your driver. You will need to
+//! choose a [`Vector`] type for representing accelerometer data which best
 //! matches the output of your device. This trait has a single method,
-//! [acceleration], which returns a reading from the accelerometer or an error.
+//! [`Accelerometer::acceleration`], which returns a reading from the accelerometer or an error.
 //!
 //! See the [ADXL343 crate] for an example.
 //!
