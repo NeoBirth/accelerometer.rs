@@ -99,7 +99,7 @@ where
     }
 
     /// Consumes the tracker object and returns the underlying accelerometer
-    pub fn return_accelerometer(self) -> A {
+    pub fn into_accelerometer(self) -> A {
         self.accelerometer
     }
 }
