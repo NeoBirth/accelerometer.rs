@@ -92,4 +92,14 @@ where
     pub fn last_orientation(&self) -> Orientation {
         self.last_orientation
     }
+
+    /// Get access to the underlying accelerometer by borrowing it
+    pub fn accelerometer(&mut self) -> &mut A {
+        &mut self.accelerometer
+    }
+
+    /// Consumes the tracker object and returns the underlying accelerometer
+    pub fn return_accelerometer(self) -> A {
+        self.accelerometer
+    }
 }
