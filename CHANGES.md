@@ -1,3 +1,7 @@
+## [0.8.0] (2019-11-01)
+
+- Decouple `Tracker` from `Accelerometer` ([#38])
+
 ## [0.7.0] (2019-10-02)
 
 - Upgrade to `micromath` v0.4 ([#34])
@@ -43,6 +47,8 @@
 
 - Initial implementation ([#1])
 
+[0.8.0]: https://github.com/NeoBirth/accelerometer.rs/pull/39
+[#38]: https://github.com/NeoBirth/accelerometer.rs/pull/38
 [0.7.0]: https://github.com/NeoBirth/accelerometer.rs/pull/35
 [#34]: https://github.com/NeoBirth/accelerometer.rs/pull/34
 [0.6.1]: https://github.com/NeoBirth/accelerometer.rs/pull/33
