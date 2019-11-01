@@ -28,18 +28,11 @@
 //! [ADXL343 crate]: https://github.com/NeoBirth/ADXL343.rs/blob/23664e0c765847708c8751c5d3cce76227c0cc76/src/lib.rs#L184
 
 #![no_std]
-#![deny(
-    warnings,
-    missing_docs,
-    trivial_casts,
-    trivial_numeric_casts,
-    unused_import_braces,
-    unused_qualifications
-)]
+#![deny(warnings, missing_docs, rust_2018_idioms)]
 #![forbid(unsafe_code)]
 #![doc(
     html_logo_url = "https://raw.githubusercontent.com/NeoBirth/accelerometer.rs/develop/img/cartesian-ferris.png",
-    html_root_url = "https://docs.rs/accelerometer/0.7.0"
+    html_root_url = "https://docs.rs/accelerometer/0.8.0"
 )]
 
 mod accelerometer;
