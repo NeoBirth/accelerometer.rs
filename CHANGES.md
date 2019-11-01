@@ -1,3 +1,7 @@
+## [0.8.1] (2019-11-01)
+
+- Fix doc link resolution failure ([#40])
+
 ## [0.8.0] (2019-11-01)
 
 - Decouple `Tracker` from `Accelerometer` ([#38])
@@ -47,6 +51,8 @@
 
 - Initial implementation ([#1])
 
+[0.8.1]: https://github.com/NeoBirth/accelerometer.rs/pull/41
+[#40]: https://github.com/NeoBirth/accelerometer.rs/pull/40
 [0.8.0]: https://github.com/NeoBirth/accelerometer.rs/pull/39
 [#38]: https://github.com/NeoBirth/accelerometer.rs/pull/38
 [0.7.0]: https://github.com/NeoBirth/accelerometer.rs/pull/35
