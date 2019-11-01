@@ -1,60 +1,55 @@
-//! Device position tracker which uses a sliding widow of acceleration data
-//! samples to help filter the signal from the noise.
+//! Orientation tracker
 
 use crate::{
-    accelerometer::Accelerometer,
     orientation::Orientation,
     vector::{Component, Vector, VectorExt},
 };
-use core::marker::PhantomData;
 use micromath::generic_array::typenum::U3;
 
 // Spuriously triggers unused import warnings in cases std is linked
 #[allow(unused_imports)]
 use micromath::F32Ext;
 
-/// Device position tracker which which filters noisy accelerometer data
-/// using statistical methods
-pub struct Tracker<A, V>
-where
-    A: Accelerometer<V>,
-    V: Vector<Axes = U3> + VectorExt,
-{
-    /// The underlying accelerometer device
-    accelerometer: A,
-
+/// Orientation tracker: computes a device's [`Orientation`] from accelerometer
+/// readings.
+pub struct Tracker {
     /// Threshold at which acceleration due to gravity is registered
     threshold: f32,
 
     /// Last orientation type read from the accelerometer
     last_orientation: Orientation,
-
-    /// Vector type
-    vector: PhantomData<V>,
 }
 
-impl<A, V, C> Tracker<A, V>
-where
-    A: Accelerometer<V>,
-    V: Vector<Axes = U3, Component = C> + VectorExt,
-    C: Component + Into<f32>,
-{
-    /// Create a new orientation tracker
-    pub fn new(accelerometer: A, threshold: V::Component) -> Self {
+impl Tracker {
+    /// Create a new orientation tracker.
+    ///
+    /// The `threshold` value should be slightly less than the absolute value
+    /// of the reading you get from the accelerometer when the device is lying
+    /// in a position where two of the axes are reading 0 (i.e. getting a
+    /// strong reading from one axis alone). It may require some
+    /// experimentation to properly tune this threshold.
+    ///
+    /// For best results, set the accelerometer's sensitivity higher than ±2G,
+    /// e.g. ±4G or ±8G. This will help reduce noise in the accelerometer data.
+    pub fn new(threshold: impl Into<f32>) -> Self {
         Self {
-            accelerometer,
             threshold: threshold.into(),
             last_orientation: Orientation::Unknown,
-            vector: PhantomData,
         }
     }
 
-    /// Get an orientation reading
-    pub fn orientation(&mut self) -> Result<Orientation, A::Error> {
-        let accel = self.accelerometer.acceleration()?.to_array();
-        let x: f32 = accel[0].into();
-        let y: f32 = accel[1].into();
-        let z: f32 = accel[2].into();
+    /// Update the tracker's internal state from the given acceleration vector
+    /// (i.e. obtained from [`Accelerometer::acceleration`], returning a new
+    /// computed orientation value.
+    pub fn update<V, C>(&mut self, acceleration: V) -> Orientation
+    where
+        V: Vector<Axes = U3, Component = C> + VectorExt,
+        C: Component + Into<f32>,
+    {
+        let components = acceleration.to_array();
+        let x: f32 = components[0].into();
+        let y: f32 = components[1].into();
+        let z: f32 = components[2].into();
 
         let result = if x.abs() > self.threshold {
             // Landscape
@@ -85,11 +80,13 @@ where
             self.last_orientation = result;
         }
 
-        Ok(result)
+        result
     }
 
-    /// Get the last known orientation reading for the device
-    pub fn last_orientation(&self) -> Orientation {
+    /// Get the last known orientation reading for the device.
+    ///
+    /// Use [`Tracker::update`] to obtain a new reading.
+    pub fn orientation(&self) -> Orientation {
         self.last_orientation
     }
 }
