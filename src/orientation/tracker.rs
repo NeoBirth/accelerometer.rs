@@ -6,6 +6,10 @@ use crate::{
 };
 use micromath::generic_array::typenum::U3;
 
+// Used for intra-doc-link resolution only
+#[allow(unused_imports)]
+use crate::accelerometer::Accelerometer;
+
 // Spuriously triggers unused import warnings in cases std is linked
 #[allow(unused_imports)]
 use micromath::F32Ext;
@@ -39,7 +43,7 @@ impl Tracker {
     }
 
     /// Update the tracker's internal state from the given acceleration vector
-    /// (i.e. obtained from [`Accelerometer::acceleration`], returning a new
+    /// (i.e. obtained from [`Accelerometer::acceleration`]), returning a new
     /// computed orientation value.
     pub fn update<V, C>(&mut self, acceleration: V) -> Orientation
     where
