@@ -34,6 +34,7 @@ drivers built on `embedded-hal` which also implement this crate's
 | [ADXL343]   | Analog Devices 3-axis accelerometer | [![crates.io][adxl343-crate-img]][adxl343] [![docs.rs][adxl343-docs-img]][adxl343-docs] |
 | [LIS2DH12]  | ST 3-Axis MEMS Accelerometer | [![crates.io][lis2dh12-crate-img]][lis2dh12] [![docs.rs][lis2dh12-docs-img]][lis2dh12-docs] |
 | [MMA7660FC] | Grove 3-Axis Digital Accelerometer  | [![crates.io][mma7660fc-crate-img]][mma7660fc] [![docs.rs][mma7660fc-docs-img]][mma7660fc-docs] |
+| [LIS3DH]  | High Performance ST 3-Axis MEMS "nano" Accelerometer | [![crates.io][lis3dh-crate-img]][lis3dh] [![docs.rs][lis3dh-docs-img]][lis3dh-docs] |
 
 [adxl343]: https://github.com/NeoBirth/ADXL343.rs
 [adxl343-crate-img]: https://img.shields.io/crates/v/adxl343.svg
@@ -49,6 +50,11 @@ drivers built on `embedded-hal` which also implement this crate's
 [mma7660fc-crate-img]: https://img.shields.io/crates/v/mma7660fc.svg
 [mma7660fc-docs-img]: https://docs.rs/mma7660fc/badge.svg
 [mma7660fc-docs]: https://docs.rs/mma7660fc/
+
+[lis3dh]: https://github.com/BenBergman/lis3dh-rs
+[lis3dh-crate-img]: https://img.shields.io/crates/v/lis3dh.svg
+[lis3dh-docs-img]: https://docs.rs/lis3dh/badge.svg
+[lis3dh-docs]: https://docs.rs/lis3dh/
 
 ## Orientation Tracking (3-axis accelerometers only)
 
