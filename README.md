@@ -5,6 +5,8 @@
 [![Crate][crate-img]][crate-link]
 [![Docs][docs-img]][docs-link]
 [![Build Status][build-image]][build-link]
+[![Safety Dance][safety-image]][safety-link]
+![MSRV][msrv-image]
 [![LGPL 3.0 licensed][license-image]][license-link]
 [![Gitter Chat][gitter-image]][gitter-link]
 
@@ -89,8 +91,11 @@ Dual licensed under your choice of either of:
 [crate-link]: https://crates.io/crates/accelerometer
 [docs-img]: https://docs.rs/accelerometer/badge.svg
 [docs-link]: https://docs.rs/accelerometer/
-[build-image]: https://secure.travis-ci.org/NeoBirth/accelerometer.rs.svg?branch=develop
-[build-link]: https://travis-ci.org/NeoBirth/accelerometer.rs
+[build-image]: https://github.com/neobirth/accelerometer.rs/workflows/Rust/badge.svg
+[build-link]: https://github.com/neobirth/accelerometer.rs/actions
+[safety-image]: https://img.shields.io/badge/unsafe-forbidden-success.svg
+[safety-link]: https://github.com/rust-secure-code/safety-dance/
+[msrv-image]: https://img.shields.io/badge/rustc-1.31+-blue.svg
 [license-image]: https://img.shields.io/badge/license-Apache2.0/MIT-blue.svg
 [license-link]: https://github.com/NeoBirth/accelerometer.rs/blob/develop/LICENSE-APACHE
 [gitter-image]: https://badges.gitter.im/NeoBirth/accelerometer.rs.svg
