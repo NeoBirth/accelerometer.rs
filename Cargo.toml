@@ -14,12 +14,13 @@ edition     = "2018"
 categories  = ["embedded", "hardware-support", "no-std"]
 keywords    = ["acceleration", "position", "tracking"]
 
-[dependencies]
-micromath = "0.4"
+[badges]
+maintenance = { status = "passively-maintained" }
+
+[dependencies.micromath]
+version = "0.5"
+features = ["vector"]
 
 [features]
 default = ["orientation"]
 orientation = []
-
-[badges]
-travis-ci = { repository = "NeoBirth/accelerometer.rs" }
