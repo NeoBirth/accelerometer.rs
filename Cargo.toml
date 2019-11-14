@@ -1,11 +1,11 @@
 [package]
 name        = "accelerometer"
+version     = "0.9.0" # Also update html_root_url in lib.rs when bumping this
 description = """
 Generic, embedded-friendly accelerometer support, including
 traits and types for taking readings from 2 or 3-axis
 accelerometers and tracking device orientations.
 """
-version     = "0.8.1"
 authors     = ["Tony Arcieri <bascule@gmail.com>"]
 license     = "Apache-2.0 OR MIT"
 repository  = "https://github.com/NeoBirth/accelerometer.rs"
