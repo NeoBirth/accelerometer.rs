@@ -1,3 +1,7 @@
+## [0.9.0] (2019-11-14)
+
+- Upgrade to `micromath` v0.5 ([#45])
+
 ## [0.8.1] (2019-11-01)
 
 - Fix doc link resolution failure ([#40])
@@ -51,6 +55,8 @@
 
 - Initial implementation ([#1])
 
+[0.9.0]: https://github.com/NeoBirth/accelerometer.rs/pull/46
+[#45]: https://github.com/NeoBirth/accelerometer.rs/pull/45
 [0.8.1]: https://github.com/NeoBirth/accelerometer.rs/pull/41
 [#40]: https://github.com/NeoBirth/accelerometer.rs/pull/40
 [0.8.0]: https://github.com/NeoBirth/accelerometer.rs/pull/39
