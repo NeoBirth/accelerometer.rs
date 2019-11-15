@@ -28,12 +28,12 @@
 //! [ADXL343 crate]: https://github.com/NeoBirth/ADXL343.rs/blob/23664e0c765847708c8751c5d3cce76227c0cc76/src/lib.rs#L184
 
 #![no_std]
-#![deny(warnings, missing_docs, rust_2018_idioms)]
-#![forbid(unsafe_code)]
 #![doc(
     html_logo_url = "https://raw.githubusercontent.com/NeoBirth/accelerometer.rs/develop/img/cartesian-ferris.png",
     html_root_url = "https://docs.rs/accelerometer/0.9.0"
 )]
+#![forbid(unsafe_code)]
+#![warn(missing_docs, rust_2018_idioms, unused_qualifications)]
 
 mod accelerometer;
 pub mod error;
