@@ -30,7 +30,7 @@
 #![no_std]
 #![doc(
     html_logo_url = "https://raw.githubusercontent.com/NeoBirth/accelerometer.rs/develop/img/cartesian-ferris.png",
-    html_root_url = "https://docs.rs/accelerometer/0.9.0"
+    html_root_url = "https://docs.rs/accelerometer/0.10.0"
 )]
 #![forbid(unsafe_code)]
 #![warn(missing_docs, rust_2018_idioms, unused_qualifications)]
