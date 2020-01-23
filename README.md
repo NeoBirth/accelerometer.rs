@@ -78,7 +78,7 @@ For more information, please see [CODE_OF_CONDUCT.md].
 
 ## License
 
-Copyright © 2019 NeoBirth Developers
+Copyright © 2019-2020 NeoBirth Developers
 
 Dual licensed under your choice of either of:
 
