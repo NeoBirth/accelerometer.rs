@@ -15,10 +15,14 @@
 //! and write a driver which is able to communicate with the accelerometer and
 //! obtain data.
 //!
-//! Next, impl the [`Accelerometer`] trait for your driver. You will need to
-//! choose a [`Vector`] type for representing accelerometer data which best
-//! matches the output of your device. This trait has a single method,
-//! [`Accelerometer::acceleration`], which returns a reading from the accelerometer or an error.
+//! Next, impl the [`Accelerometer`] trait (providing normalized readings) and/or
+//! the [`RawAccelerometer`] trait (providing direct access to raw data) for
+//! your driver (ideally the former, as it provides reuse across drivers).
+//!
+//! For [`RawAccelerometer`], you will need to choose a [`Vector`] type for
+//! raw accelerometer data which best matches the output of your device.
+//! This trait has a single method, [`RawAccelerometer::accel_raw`], which
+//! returns a reading from the accelerometer or an error.
 //!
 //! See the [ADXL343 crate] for an example.
 //!
@@ -40,7 +44,8 @@ pub mod error;
 #[cfg(feature = "orientation")]
 pub mod orientation;
 
+pub use crate::{accelerometer::*, error::*};
+pub use micromath::vector::{self, Vector};
+
 #[cfg(feature = "orientation")]
 pub use crate::orientation::*;
-pub use crate::{accelerometer::*, error::*};
-pub use micromath::vector::{self, *};

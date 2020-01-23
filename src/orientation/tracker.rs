@@ -33,8 +33,8 @@ impl Tracker {
     /// strong reading from one axis alone). It may require some
     /// experimentation to properly tune this threshold.
     ///
-    /// For best results, set the accelerometer's sensitivity higher than ±2G,
-    /// e.g. ±4G or ±8G. This will help reduce noise in the accelerometer data.
+    /// For best results, set the accelerometer's sensitivity higher than ±2g,
+    /// e.g. ±4g or ±8g. This will help reduce noise in the accelerometer data.
     pub fn new(threshold: impl Into<f32>) -> Self {
         Self {
             threshold: threshold.into(),
@@ -43,7 +43,7 @@ impl Tracker {
     }
 
     /// Update the tracker's internal state from the given acceleration vector
-    /// (i.e. obtained from [`Accelerometer::acceleration`]), returning a new
+    /// (i.e. obtained from [`Accelerometer::accel_norm`]), returning a new
     /// computed orientation value.
     pub fn update<V, C>(&mut self, acceleration: V) -> Orientation
     where

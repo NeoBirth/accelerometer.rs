@@ -1,4 +1,4 @@
-//! Orientation tracking for accelerometer-equipped devices
+//! Orientation tracking for accelerometer-equipped devices.
 
 mod tracker;
 
