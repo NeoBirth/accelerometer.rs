@@ -28,12 +28,13 @@ accelerometer data.
 ## Supported Crates
 
 The following dependent crates providing platform-agnostic accelerometer
-drivers built on `embedded-hal` which also implement this crate's
-[`Accelerometer`] trait:
+drivers built on `embedded-hal` which also implement the [`Accelerometer`]
+and/or the [`RawAccelerometer`] traits from this crate:
 
 | Device Name | Description | Crate + Docs |
 |-------------|-------------|--------------|
 | [ADXL343]   | Analog Devices 3-axis accelerometer | [![crates.io][adxl343-crate-img]][adxl343] [![docs.rs][adxl343-docs-img]][adxl343-docs] |
+| [ADXL355]   | Analog Devices 3-axis accelerometer | [![crates.io][adxl355-crate-img]][adxl355] [![docs.rs][adxl355-docs-img]][adxl355-docs] |
 | [LIS2DH12]  | ST 3-Axis MEMS Accelerometer | [![crates.io][lis2dh12-crate-img]][lis2dh12] [![docs.rs][lis2dh12-docs-img]][lis2dh12-docs] |
 | [LIS3DH]    | High Performance ST 3-Axis MEMS "nano" Accelerometer | [![crates.io][lis3dh-crate-img]][lis3dh] [![docs.rs][lis3dh-docs-img]][lis3dh-docs] |
 | [MMA7660FC] | Grove 3-Axis Digital Accelerometer  | [![crates.io][mma7660fc-crate-img]][mma7660fc] [![docs.rs][mma7660fc-docs-img]][mma7660fc-docs] |
@@ -42,6 +43,11 @@ drivers built on `embedded-hal` which also implement this crate's
 [adxl343-crate-img]: https://img.shields.io/crates/v/adxl343.svg
 [adxl343-docs-img]: https://docs.rs/adxl343/badge.svg
 [adxl343-docs]: https://docs.rs/adxl343/
+
+[adxl355]: https://github.com/JitterCompany/adxl355-rs
+[adxl355-crate-img]: https://img.shields.io/crates/v/adxl355.svg
+[adxl355-docs-img]: https://docs.rs/adxl355/badge.svg
+[adxl355-docs]: https://docs.rs/adxl355/
 
 [lis2dh12]: https://github.com/tkeksa/lis2dh12
 [lis2dh12-crate-img]: https://img.shields.io/crates/v/lis2dh12.svg
@@ -106,6 +112,7 @@ Dual licensed under your choice of either of:
 [embedded-hal]: https://docs.rs/embedded-hal/
 [micromath.rs]: https://github.com/NeoBirth/micromath
 [`Accelerometer`]: https://docs.rs/accelerometer/latest/accelerometer/trait.Accelerometer.html
+[`RawAccelerometer`]: https://docs.rs/accelerometer/latest/accelerometer/trait.RawAccelerometer.html
 [`accelerometer::Orientation`]: https://docs.rs/accelerometer/latest/accelerometer/orientation/enum.Orientation.html
 [`accelerometer::Tracker`]: https://docs.rs/accelerometer/latest/accelerometer/orientation/struct.Tracker.html
 [cc]: https://contributor-covenant.org
