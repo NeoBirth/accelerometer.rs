@@ -71,7 +71,7 @@ impl Tracker {
             }
         } else if z.abs() > self.threshold {
             // Flat
-            if z >= 0.0 {
+            if z <= 0.0 {
                 Orientation::FaceUp
             } else {
                 Orientation::FaceDown
