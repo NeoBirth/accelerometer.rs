@@ -1,6 +1,6 @@
 [package]
 name        = "accelerometer"
-version     = "0.11.0" # Also update html_root_url in lib.rs when bumping this
+version     = "0.12.0" # Also update html_root_url in lib.rs when bumping this
 description = """
 Generic, embedded-friendly accelerometer support, including
 traits and types for taking readings from 2 or 3-axis
