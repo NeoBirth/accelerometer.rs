@@ -33,11 +33,17 @@ and/or the [`RawAccelerometer`] traits from this crate:
 
 | Device Name | Description | Crate + Docs |
 |-------------|-------------|--------------|
+| [ADXL313]   | Analog Devices 3-axis accelerometer | [![crates.io][adxl313-crate-img]][adxl313] [![docs.rs][adxl313-docs-img]][adxl313-docs] |
 | [ADXL343]   | Analog Devices 3-axis accelerometer | [![crates.io][adxl343-crate-img]][adxl343] [![docs.rs][adxl343-docs-img]][adxl343-docs] |
 | [ADXL355]   | Analog Devices 3-axis accelerometer | [![crates.io][adxl355-crate-img]][adxl355] [![docs.rs][adxl355-docs-img]][adxl355-docs] |
 | [LIS2DH12]  | ST 3-Axis MEMS Accelerometer | [![crates.io][lis2dh12-crate-img]][lis2dh12] [![docs.rs][lis2dh12-docs-img]][lis2dh12-docs] |
 | [LIS3DH]    | High Performance ST 3-Axis MEMS "nano" Accelerometer | [![crates.io][lis3dh-crate-img]][lis3dh] [![docs.rs][lis3dh-docs-img]][lis3dh-docs] |
 | [MMA7660FC] | Grove 3-Axis Digital Accelerometer  | [![crates.io][mma7660fc-crate-img]][mma7660fc] [![docs.rs][mma7660fc-docs-img]][mma7660fc-docs] |
+
+[adxl313]: https://github.com/mvniekerk/adxl313.rs
+[adxl313-crate-img]: https://img.shields.io/crates/v/adxl313.svg
+[adxl313-docs-img]: https://docs.rs/adxl313/badge.svg
+[adxl313-docs]: https://docs.rs/adxl313/
 
 [adxl343]: https://github.com/NeoBirth/ADXL343.rs
 [adxl343-crate-img]: https://img.shields.io/crates/v/adxl343.svg
