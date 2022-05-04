@@ -18,7 +18,7 @@ keywords    = ["acceleration", "position", "tracking"]
 maintenance = { status = "passively-maintained" }
 
 [dependencies.micromath]
-version = "1"
+version = "2"
 features = ["vector"]
 
 [features]

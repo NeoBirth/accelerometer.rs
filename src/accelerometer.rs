@@ -1,5 +1,7 @@
 //! Traits for reading acceleration measurements from accelerometers.
 
+use micromath::vector::Component;
+
 use crate::{
     error::Error,
     vector::{F32x3, Vector},
@@ -37,7 +39,7 @@ pub trait Accelerometer {
 ///
 /// This is intended to provide direct access to raw accelerometer data and
 /// should use a vector type which best matches the raw accelerometer data.
-pub trait RawAccelerometer<V: Vector> {
+pub trait RawAccelerometer<C: Component, V: Vector<C>>{
     /// Error type
     type Error: Debug;
 
