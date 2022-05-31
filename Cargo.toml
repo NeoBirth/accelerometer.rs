@@ -11,6 +11,7 @@ license     = "Apache-2.0 OR MIT"
 repository  = "https://github.com/NeoBirth/accelerometer.rs"
 readme      = "README.md"
 edition     = "2018"
+rust-version = "1.47"
 categories  = ["embedded", "hardware-support", "no-std"]
 keywords    = ["acceleration", "position", "tracking"]
 
