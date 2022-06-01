@@ -2,9 +2,8 @@
 
 use crate::{
     orientation::Orientation,
-    vector::{Component, Vector, VectorExt},
+    vector::{Component, Vector3d},
 };
-use micromath::generic_array::typenum::U3;
 
 // Used for intra-doc-link resolution only
 #[allow(unused_imports)]
@@ -45,9 +44,8 @@ impl Tracker {
     /// Update the tracker's internal state from the given acceleration vector
     /// (i.e. obtained from [`Accelerometer::accel_norm`]), returning a new
     /// computed orientation value.
-    pub fn update<V, C>(&mut self, acceleration: V) -> Orientation
+    pub fn update<C>(&mut self, acceleration: Vector3d<C>) -> Orientation
     where
-        V: Vector<Axes = U3, Component = C> + VectorExt,
         C: Component + Into<f32>,
     {
         let components = acceleration.to_array();

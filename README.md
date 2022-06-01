@@ -23,7 +23,7 @@ accelerometer data.
 
 ## Requirements
 
-- Rust 1.31+
+- Rust 1.47+
 
 ## Supported Crates
 

@@ -32,25 +32,16 @@ pub enum Orientation {
 impl Orientation {
     /// Is this orientation considered to be flat?
     pub fn is_flat(self) -> bool {
-        match self {
-            Orientation::FaceUp | Orientation::FaceDown => true,
-            _ => false,
-        }
+        matches!(self, Orientation::FaceUp | Orientation::FaceDown)
     }
 
     /// Is the device in a landscape orientation?
     pub fn is_landscape(self) -> bool {
-        match self {
-            Orientation::LandscapeUp | Orientation::LandscapeDown => true,
-            _ => false,
-        }
+        matches!(self, Orientation::LandscapeUp | Orientation::LandscapeDown)
     }
 
     /// Is the device in a portrait orientation?
     pub fn is_portrait(self) -> bool {
-        match self {
-            Orientation::PortraitUp | Orientation::PortraitDown => true,
-            _ => false,
-        }
+        matches!(self, Orientation::PortraitUp | Orientation::PortraitDown)
     }
 }
