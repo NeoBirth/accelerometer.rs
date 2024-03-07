@@ -40,6 +40,8 @@ and/or the [`RawAccelerometer`] traits from this crate:
 | [LIS3DH]    | High Performance ST 3-Axis MEMS "nano" Accelerometer | [![crates.io][lis3dh-crate-img]][lis3dh] [![docs.rs][lis3dh-docs-img]][lis3dh-docs] |
 | [MMA7660FC] | Grove 3-Axis Digital Accelerometer  | [![crates.io][mma7660fc-crate-img]][mma7660fc] [![docs.rs][mma7660fc-docs-img]][mma7660fc-docs] |
 | [STK8BA58] | SENSORTEK 3-Axis MEMS Accelerometer | [![crates.io][stk8ba58-crate-img]][stk8ba58] [![docs.rs][stk8ba58-docs-img]][stk8ba58-docs] |
+| [KXTJ31057]   | Silicon Micromachined  3-axis accelerometer | [![crates.io][kxtj31057-crate-img]][kxtj31057] [![docs.rs][kxtj31057-docs-img]][kxtj31057-docs] |
+
 
 [adxl313]: https://github.com/mvniekerk/adxl313.rs
 [adxl313-crate-img]: https://img.shields.io/crates/v/adxl313.svg
@@ -75,6 +77,12 @@ and/or the [`RawAccelerometer`] traits from this crate:
 [stk8ba58-crate-img]: https://img.shields.io/crates/v/stk8ba58.svg
 [stk8ba58-docs-img]: https://docs.rs/stk8ba58/badge.svg
 [stk8ba58-docs]: https://docs.rs/stk8ba58/
+
+[kxtj31057]: https://github.com/p3zhy/kxtj3-1057/
+[kxtj31057-crate-img]: https://img.shields.io/crates/v/kxtj3-1057.svg
+[kxtj31057-docs-img]: https://docs.rs/kxtj3-1057/badge.svg
+[kxtj31057-docs]: https://docs.rs/kxtj3-1057/
+
 
 ## Orientation Tracking (3-axis accelerometers only)
 
