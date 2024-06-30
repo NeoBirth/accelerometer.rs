@@ -1,19 +1,19 @@
 [package]
-name        = "accelerometer"
-version     = "0.12.0" # Also update html_root_url in lib.rs when bumping this
+name = "accelerometer"
+version = "0.12.0" # Also update html_root_url in lib.rs when bumping this
 description = """
 Generic, embedded-friendly accelerometer support, including
 traits and types for taking readings from 2 or 3-axis
 accelerometers and tracking device orientations.
 """
-authors     = ["Tony Arcieri <bascule@gmail.com>"]
-license     = "Apache-2.0 OR MIT"
-repository  = "https://github.com/NeoBirth/accelerometer.rs"
-readme      = "README.md"
-edition     = "2018"
+authors = ["Tony Arcieri <bascule@gmail.com>"]
+license = "Apache-2.0 OR MIT"
+repository = "https://github.com/NeoBirth/accelerometer.rs"
+readme = "README.md"
+edition = "2018"
 rust-version = "1.47"
-categories  = ["embedded", "hardware-support", "no-std"]
-keywords    = ["acceleration", "position", "tracking"]
+categories = ["embedded", "hardware-support", "no-std"]
+keywords = ["acceleration", "position", "tracking"]
 
 [badges]
 maintenance = { status = "passively-maintained" }
@@ -22,6 +22,15 @@ maintenance = { status = "passively-maintained" }
 version = "2"
 features = ["vector"]
 
+[dependencies.defmt]
+version = "0.3.8"
+optional = true
+
 [features]
 default = ["orientation"]
 orientation = []
+defmt = ["dep:defmt"]
+
+[package.metadata.docs.rs]
+all-features = true
+rustdoc-args = ["--cfg", "docsrs"]

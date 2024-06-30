@@ -45,3 +45,34 @@ impl Orientation {
         matches!(self, Orientation::PortraitUp | Orientation::PortraitDown)
     }
 }
+
+#[cfg_attr(docsrs, doc(cfg(feature = "defmt")))]
+#[cfg(feature = "defmt")]
+impl defmt::Format for Orientation {
+    fn format(&self, fmt: defmt::Formatter<'_>) {
+        // Implemented manually so that the docs.rs marker can be applied.
+        match self {
+            Orientation::Unknown => {
+                defmt::write!(fmt, "Unknown")
+            }
+            Orientation::PortraitUp => {
+                defmt::write!(fmt, "PortraitUp")
+            }
+            Orientation::PortraitDown => {
+                defmt::write!(fmt, "PortraitDown")
+            }
+            Orientation::LandscapeUp => {
+                defmt::write!(fmt, "LandscapeUp")
+            }
+            Orientation::LandscapeDown => {
+                defmt::write!(fmt, "LandscapeDown")
+            }
+            Orientation::FaceUp => {
+                defmt::write!(fmt, "FaceUp")
+            }
+            Orientation::FaceDown => {
+                defmt::write!(fmt, "FaceDown")
+            }
+        }
+    }
+}

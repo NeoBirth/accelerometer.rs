@@ -100,3 +100,39 @@ where
         Self::new_with_cause(ErrorKind::Bus, cause)
     }
 }
+
+#[cfg_attr(docsrs, doc(cfg(feature = "defmt")))]
+#[cfg(feature = "defmt")]
+impl<E: Debug + defmt::Format> defmt::Format for Error<E> {
+    fn format(&self, fmt: defmt::Formatter<'_>) {
+        // Implemented manually so that the docs.rs marker can be applied.
+        defmt::write!(
+            fmt,
+            "Error {{ kind = {}, cause = {}  }}",
+            self.kind,
+            self.cause
+        )
+    }
+}
+
+#[cfg_attr(docsrs, doc(cfg(feature = "defmt")))]
+#[cfg(feature = "defmt")]
+impl defmt::Format for ErrorKind {
+    fn format(&self, fmt: defmt::Formatter<'_>) {
+        // Implemented manually so that the docs.rs marker can be applied.
+        match self {
+            ErrorKind::Device => {
+                defmt::write!(fmt, "Device")
+            }
+            ErrorKind::Bus => {
+                defmt::write!(fmt, "Bus")
+            }
+            ErrorKind::Mode => {
+                defmt::write!(fmt, "Mode")
+            }
+            ErrorKind::Param => {
+                defmt::write!(fmt, "Param")
+            }
+        }
+    }
+}

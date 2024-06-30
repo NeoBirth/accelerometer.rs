@@ -39,8 +39,12 @@
 #![forbid(unsafe_code)]
 #![warn(missing_docs, rust_2018_idioms, unused_qualifications)]
 
+// Enables the `doc_cfg` feature when the `docsrs` configuration attribute is defined.
+#![cfg_attr(docsrs, feature(doc_cfg))]
+
 mod accelerometer;
 pub mod error;
+#[cfg_attr(docsrs, doc(cfg(feature = "orientation")))]
 #[cfg(feature = "orientation")]
 pub mod orientation;
 

@@ -92,3 +92,17 @@ impl Tracker {
         self.last_orientation
     }
 }
+
+#[cfg_attr(docsrs, doc(cfg(feature = "defmt")))]
+#[cfg(feature = "defmt")]
+impl defmt::Format for Tracker {
+    fn format(&self, fmt: defmt::Formatter<'_>) {
+        // Implemented manually so that the docs.rs marker can be applied.
+        defmt::write!(
+            fmt,
+            "Tracker {{ threshold = {}, last_orientation = {}  }}",
+            self.threshold,
+            self.last_orientation
+        )
+    }
+}
