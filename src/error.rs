@@ -100,3 +100,25 @@ where
         Self::new_with_cause(ErrorKind::Bus, cause)
     }
 }
+
+#[cfg(feature = "std")]
+impl<E> std::error::Error for Error<E>
+where
+    E: Debug + std::error::Error + 'static,
+{
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        self.cause
+            .as_ref()
+            .map(|cause| cause as &(dyn std::error::Error + 'static))
+    }
+}
+
+#[cfg(feature = "std")]
+impl<E> Display for Error<E>
+where
+    E: Debug,
+{
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        write!(f, "{}", self.kind)
+    }
+}

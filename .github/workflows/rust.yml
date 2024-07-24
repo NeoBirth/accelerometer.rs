@@ -47,7 +47,7 @@ jobs:
       - name: Install thumbv7em-none-eabihf target
         run: rustup target add thumbv7em-none-eabihf
 
-      - name: Run cargo build
+      - name: Run cargo build (no_std)
         uses: actions-rs/cargo@v1
         env:
           RUSTFLAGS: -D warnings
@@ -61,7 +61,7 @@ jobs:
           RUSTFLAGS: -D warnings
         with:
           command: build
-          args: --all-features --release --target thumbv7em-none-eabihf
+          args: --all-features --release
 
   test:
     name: Test Suite

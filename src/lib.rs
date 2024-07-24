@@ -39,6 +39,9 @@
 #![forbid(unsafe_code)]
 #![warn(missing_docs, rust_2018_idioms, unused_qualifications)]
 
+#[cfg(feature = "std")]
+extern crate std;
+
 mod accelerometer;
 pub mod error;
 #[cfg(feature = "orientation")]
